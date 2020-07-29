@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hellohhy.gitee.io/game/index.html</loc>
+    <loc>https://hellohhy.gitee.io/tags/index.html</loc>
     
-    <lastmod>2020-07-29T13:09:51.245Z</lastmod>
+    <lastmod>2020-07-29T13:14:59.056Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2020-07-29T13:14:44.307Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hellohhy.gitee.io/2020/07/29/vim%E9%85%8D%E7%BD%AE/</loc>
     
-    <lastmod>2020-07-29T13:07:29.272Z</lastmod>
+    <lastmod>2020-07-29T13:11:31.637Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/game/index.html</loc>
+    
+    <lastmod>2020-07-29T13:09:51.245Z</lastmod>
     
   </url>
   
@@ -51,21 +65,7 @@
   </url>
   
   <url>
-    <loc>https://hellohhy.gitee.io/tags/index.html</loc>
-    
-    <lastmod>2020-07-27T09:40:59.755Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hellohhy.gitee.io/archive/index.html</loc>
-    
-    <lastmod>2020-07-27T09:40:59.431Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/categories/index.html</loc>
     
     <lastmod>2020-07-27T09:40:59.431Z</lastmod>
     
