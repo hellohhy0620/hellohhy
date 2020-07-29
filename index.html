@@ -349,331 +349,28 @@
   
 
 
-  <a href="/2020/07/29/2048/animframe_polyfill/">
+  <a href="/2020/07/29/2048/">
     <h2 class="post-title">
-      2048/animframe_polyfill
+      2048
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      (function () {
-  var lastTime = 0;
-  var vendors = ['webkit', 'moz'];
-  for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-    window.requestAnimationFrame = window[vendors......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/application/">
-    <h2 class="post-title">
-      2048/application
-    </h2>
-    <h3 class="post-subtitle">
       
-    </h3>
-    <div class="post-content-preview">
-      // Wait till the browser is ready to render the game (avoids glitches)
-window.requestAnimationFrame(function () {
-  new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
-});
-...
-    </div>
-  </a>
+
   
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
+  2048
 
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/bind_polyfill/">
-    <h2 class="post-title">
-      2048/bind_polyfill
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Function.prototype.bind = Function.prototype.bind || function (target) {
-  var self = this;
-  return function (args) {
-    if (!(args instanceof Array)) {
-      args = [args];
-    }
-    self.apply(......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/classlist_polyfill/">
-    <h2 class="post-title">
-      2048/classlist_polyfill
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      (function () {
-  if (typeof window.Element === "undefined" ||
-      "classList" in document.documentElement) {
-    return;
-  }
-
-  var prototype = Array.prototype,
-      push = prototype.push,
-     ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/game_manager/">
-    <h2 class="post-title">
-      2048/game_manager
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      function GameManager(size, InputManager, Actuator, StorageManager) {
-  this.size           = size; // Size of the grid
-  this.inputManager   = new InputManager;
-  this.storageManager = new StorageM......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/grid/">
-    <h2 class="post-title">
-      2048/grid
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      function Grid(size, previousState) {
-  this.size = size;
-  this.cells = previousState ? this.fromState(previousState) : this.empty();
-}
-
-// Build a grid of the specified size
-Grid.prototype.empty =......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/html_actuator/">
-    <h2 class="post-title">
-      2048/html_actuator
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      function HTMLActuator() {
-  this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = docume......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/keyboard_input_manager/">
-    <h2 class="post-title">
-      2048/keyboard_input_manager
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      function KeyboardInputManager() {
-  this.events = {};
-
-  if (window.navigator.msPointerEnabled) {
-    //Internet Explorer 10 style
-    this.eventTouchstart    = "MSPointerDown";
-    this.eventTouch......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/local_storage_manager/">
-    <h2 class="post-title">
-      2048/local_storage_manager
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      window.fakeStorage = {
-  _data: {},
-
-  setItem: function (id, val) {
-    return this._data[id] = String(val);
-  },
-
-  getItem: function (id) {
-    return this._data.hasOwnProperty(id) ? this._data[......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by hellohhy on
-    2020-07-29
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-<div class="post-preview">
-  
-
-
-  <a href="/2020/07/29/2048/main/">
-    <h2 class="post-title">
-      2048/main
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      @import url(fonts/clear-sans.css);
+	
+@import url(fonts/clear-sans.css);
 html, body {
   margin: 0;
   padding: 0;
   background: #faf8ef;
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18......
+......
     </div>
   </a>
   
@@ -682,6 +379,146 @@ html, body {
     2020-07-29
   </p>
   <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/字符串学习笔记/">
+    <h2 class="post-title">
+      字符串学习笔记
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      哈希
+哈希理解起来就相当于用一种映射方式，以实现快速对比字符串或者其他东西(比如图)的功能，有时候利用技巧还能实现字典序大小的比较或者反映射操作。
+其思想是非常重要而且容易理解的，关键在于hash方法以及编程上的技巧。
+取一固定值$P$，把字符串看作$P$的进制数，代表每种字符。再取一固定值$M$，求出$P$进制位对$M$的余数，作为该字串的哈希值。
+我们取$P=233$或$P=13331$......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/vim配置/">
+    <h2 class="post-title">
+      vim配置
+    </h2>
+    <h3 class="post-subtitle">
+      一个好的配置文件，会很大程度上提高打代码的效率
+    </h3>
+    <div class="post-content-preview">
+      12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set nuset siset scset isset cinset ts=4set sw=4set sts=4set mouse=acolor zellner"makeset mp=g++\ -o\ %&lt;\ ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#配置文件,mine" title="配置文件,mine">配置文件,mine</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/28/数论总结/">
+    <h2 class="post-title">
+      数论总结
+    </h2>
+    <h3 class="post-subtitle">
+      数学需要证明，信息只需要使用。作为OIER我们有些必要的数论知识需要了解。
+    </h3>
+    <div class="post-content-preview">
+      素数素数定义
+素数（prime number）又称质数，有无限个。
+素数定义为在大于1的自然数中，除了1和它本身外不再有其他的因数，否则称为合数。
+
+
+性质
+任何一个大于1的自然数都可以分解成几个素数连乘积的形式，而且这种分解是唯一的。大于1且第一个能被该自然数整除的数肯定是该分解中最小的素因子（唯一分解定理）。
+
+两个质数一定是互质数。例如，2与7、13与19。
+
+一个质数如果不能整除另一......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-28
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#数论" title="数论">数论</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/27/Hexo-Theme-LiveMyLife/">
+    <h2 class="post-title">
+      Hexo-Theme-LiveMyLife
+    </h2>
+    <h3 class="post-subtitle">
+      A succinct hexo theme...
+    </h3>
+    <div class="post-content-preview">
+      
+Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
+This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-27
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
     
   </div>
   
@@ -694,10 +531,6 @@ html, body {
   <!-- Pager -->
   <ul class="pager">
     
-    
-    <li class="next">
-      <a href="/archives/2/">Older Posts &rarr;</a>
-    </li>
     
   </ul>
 
@@ -819,24 +652,24 @@ html, body {
 <div class="widget">
   <ul>
     
-    <a href="2020/07/29/2048/animframe_polyfill/">
-      <li>2048/animframe_polyfill</li>
+    <a href="2020/07/29/2048/">
+      <li>2048</li>
     </a>
     
-    <a href="2020/07/29/2048/application/">
-      <li>2048/application</li>
+    <a href="2020/07/29/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <li>字符串学习笔记</li>
     </a>
     
-    <a href="2020/07/29/2048/bind_polyfill/">
-      <li>2048/bind_polyfill</li>
+    <a href="2020/07/29/vim%E9%85%8D%E7%BD%AE/">
+      <li>vim配置</li>
     </a>
     
-    <a href="2020/07/29/2048/classlist_polyfill/">
-      <li>2048/classlist_polyfill</li>
+    <a href="2020/07/28/%E6%95%B0%E8%AE%BA%E6%80%BB%E7%BB%93/">
+      <li>数论总结</li>
     </a>
     
-    <a href="2020/07/29/2048/game_manager/">
-      <li>2048/game_manager</li>
+    <a href="2020/07/27/Hexo-Theme-LiveMyLife/">
+      <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
   </ul>
@@ -866,7 +699,7 @@ html, body {
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">16</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">5</span></li></ul>
     </div>
 
 
