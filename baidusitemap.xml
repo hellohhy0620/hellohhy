@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/animframe_polyfill/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/application/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/bind_polyfill/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/classlist_polyfill/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/game_manager/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/grid/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/html_actuator/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/keyboard_input_manager/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/local_storage_manager/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/main/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048_data/tile/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://hellohhy.gitee.io/2020/07/29/2048/</loc>
+    <lastmod>2020-07-29</lastmod>
+  </url>
+  <url>
     <loc>https://hellohhy.gitee.io/2020/07/29/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-07-29</lastmod>
   </url>

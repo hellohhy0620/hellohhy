@@ -110,7 +110,7 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://hellohhy.gitee.io/categories/配置文件/">
+  <link rel="canonical" href="https://hellohhy.gitee.io/archives/2/">
   <title>
     
     hellohhy
@@ -263,8 +263,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/header_img/archive_bg2.jpg');
+       /*config*/
+        background-image: url('/img/header_img/newhome_bg.jpg');
       
     }
 
@@ -342,273 +342,261 @@
                 post-container
             ">
 
+      <!-- Main Content -->
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/2048_data/tile/">
+    <h2 class="post-title">
+      2048_data/tile
+    </h2>
+    <h3 class="post-subtitle">
       
-<!-- Main Content -->
-<div class="container">
-    <link href="https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@v1.2.9/src/style/google-fonts.min.css" rel="stylesheet">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+    </h3>
+    <div class="post-content-preview">
+      function Tile(position, value) {
+  this.x                = position.x;
+  this.y                = position.y;
+  this.value            = value || 2;
 
-      
-
-      <!-- 归档列表 -->
-
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/tile/" style="color: #0085a1">
-              <span>
-                2048_data/tile
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/main/" style="color: #0085a1">
-              <span>
-                2048_data/main
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/local_storage_manager/" style="color: #0085a1">
-              <span>
-                2048_data/local_storage_manager
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/keyboard_input_manager/" style="color: #0085a1">
-              <span>
-                2048_data/keyboard_input_manager
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/html_actuator/" style="color: #0085a1">
-              <span>
-                2048_data/html_actuator
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/grid/" style="color: #0085a1">
-              <span>
-                2048_data/grid
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/game_manager/" style="color: #0085a1">
-              <span>
-                2048_data/game_manager
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/classlist_polyfill/" style="color: #0085a1">
-              <span>
-                2048_data/classlist_polyfill
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/bind_polyfill/" style="color: #0085a1">
-              <span>
-                2048_data/bind_polyfill
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/application/" style="color: #0085a1">
-              <span>
-                2048_data/application
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048_data/animframe_polyfill/" style="color: #0085a1">
-              <span>
-                2048_data/animframe_polyfill
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/2048/" style="color: #0085a1">
-              <span>
-                2048
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/字符串学习笔记/" style="color: #0085a1">
-              <span>
-                字符串学习笔记
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/29/vim配置/" style="color: #0085a1">
-              <span>
-                vim配置
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/28/数论总结/" style="color: #0085a1">
-              <span>
-                数论总结
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-27
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/27/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-        </ul>
-      </div>
-      
-
-
+  this.previousPosition = null;
+  this.mergedFrom......
     </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
   </div>
+  
+
 </div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/2048/">
+    <h2 class="post-title">
+      2048
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      
+
+  
+  2048
+
+  
+  
+  
+   
+   
+  
+  
+
+  
+  
+  
+
+
+  
+    
+    
+      2048
+      
+        0
+        0
+      
+    
+
+    
+      把方块合并成 2048!
+      新游戏
+    
+
+    
+      
+        
+        
+	        继续
+   ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/字符串学习笔记/">
+    <h2 class="post-title">
+      字符串学习笔记
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      哈希
+哈希理解起来就相当于用一种映射方式，以实现快速对比字符串或者其他东西(比如图)的功能，有时候利用技巧还能实现字典序大小的比较或者反映射操作。
+其思想是非常重要而且容易理解的，关键在于hash方法以及编程上的技巧。
+取一固定值$P$，把字符串看作$P$的进制数，代表每种字符。再取一固定值$M$，求出$P$进制位对$M$的余数，作为该字串的哈希值。
+我们取$P=233$或$P=13331$......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/29/vim配置/">
+    <h2 class="post-title">
+      vim配置
+    </h2>
+    <h3 class="post-subtitle">
+      一个好的配置文件，会很大程度上提高打代码的效率
+    </h3>
+    <div class="post-content-preview">
+      12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849set nuset siset scset isset cinset ts=4set sw=4set sts=4set mouse=acolor zellner"makeset mp=g++\ -o\ %&lt;\ ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-29
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#配置文件,mine" title="配置文件,mine">配置文件,mine</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/28/数论总结/">
+    <h2 class="post-title">
+      数论总结
+    </h2>
+    <h3 class="post-subtitle">
+      数学需要证明，信息只需要使用。作为OIER我们有些必要的数论知识需要了解。
+    </h3>
+    <div class="post-content-preview">
+      素数素数定义
+素数（prime number）又称质数，有无限个。
+素数定义为在大于1的自然数中，除了1和它本身外不再有其他的因数，否则称为合数。
+
+
+性质
+任何一个大于1的自然数都可以分解成几个素数连乘积的形式，而且这种分解是唯一的。大于1且第一个能被该自然数整除的数肯定是该分解中最小的素因子（唯一分解定理）。
+
+两个质数一定是互质数。例如，2与7、13与19。
+
+一个质数如果不能整除另一......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-28
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#数论" title="数论">数论</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+<div class="post-preview">
+  
+
+
+  <a href="/2020/07/27/Hexo-Theme-LiveMyLife/">
+    <h2 class="post-title">
+      Hexo-Theme-LiveMyLife
+    </h2>
+    <h3 class="post-subtitle">
+      A succinct hexo theme...
+    </h3>
+    <div class="post-content-preview">
+      
+Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
+This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by hellohhy on
+    2020-07-27
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+
+
+  <!-- Pager -->
+  <ul class="pager">
+    
+    <li class="previous">
+      <a href="/">&larr; Newer Posts</a>
+    </li>
+    
+    
+  </ul>
 
 
       <!-- 如果开启评论功能 -->
@@ -775,7 +763,7 @@
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">七月 2020</a><span class="archive-list-count">16</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">七月 2020</a><span class="archive-list-count">16</span></li></ul>
     </div>
 
 
