@@ -110,10 +110,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048_data/tile/">
+  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048/grid/">
   <title>
     
-    2048_data/tile - hellohhy
+    2048/grid - hellohhy
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -286,7 +286,7 @@
             <div class="tags">
               
             </div>
-            <h1>2048_data/tile</h1>
+            <h1>2048/grid</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by hellohhy on
@@ -298,11 +298,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">67</span> In Total
+              Words <span class="post-count">330</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -363,31 +363,121 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        function Tile(position, value) {
-  this.x                = position.x;
-  this.y                = position.y;
-  this.value            = value || 2;
-
-  this.previousPosition = null;
-  this.mergedFrom       = null; // Tracks tiles that merged together
+        function Grid(size, previousState) {
+  this.size = size;
+  this.cells = previousState ? this.fromState(previousState) : this.empty();
 }
 
-Tile.prototype.savePosition = function () {
-  this.previousPosition = { x: this.x, y: this.y };
+// Build a grid of the specified size
+Grid.prototype.empty = function () {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(null);
+    }
+  }
+
+  return cells;
 };
 
-Tile.prototype.updatePosition = function (position) {
-  this.x = position.x;
-  this.y = position.y;
+Grid.prototype.fromState = function (state) {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      var tile = state[x][y];
+      row.push(tile ? new Tile(tile.position, tile.value) : null);
+    }
+  }
+
+  return cells;
 };
 
-Tile.prototype.serialize = function () {
+// Find the first available random position
+Grid.prototype.randomAvailableCell = function () {
+  var cells = this.availableCells();
+
+  if (cells.length) {
+    return cells[Math.floor(Math.random() * cells.length)];
+  }
+};
+
+Grid.prototype.availableCells = function () {
+  var cells = [];
+
+  this.eachCell(function (x, y, tile) {
+    if (!tile) {
+      cells.push({ x: x, y: y });
+    }
+  });
+
+  return cells;
+};
+
+// Call callback for every cell
+Grid.prototype.eachCell = function (callback) {
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      callback(x, y, this.cells[x][y]);
+    }
+  }
+};
+
+// Check if there are any cells available
+Grid.prototype.cellsAvailable = function () {
+  return !!this.availableCells().length;
+};
+
+// Check if the specified cell is taken
+Grid.prototype.cellAvailable = function (cell) {
+  return !this.cellOccupied(cell);
+};
+
+Grid.prototype.cellOccupied = function (cell) {
+  return !!this.cellContent(cell);
+};
+
+Grid.prototype.cellContent = function (cell) {
+  if (this.withinBounds(cell)) {
+    return this.cells[cell.x][cell.y];
+  } else {
+    return null;
+  }
+};
+
+// Inserts a tile at its position
+Grid.prototype.insertTile = function (tile) {
+  this.cells[tile.x][tile.y] = tile;
+};
+
+Grid.prototype.removeTile = function (tile) {
+  this.cells[tile.x][tile.y] = null;
+};
+
+Grid.prototype.withinBounds = function (position) {
+  return position.x >= 0 && position.x < this.size &&
+         position.y >= 0 && position.y < this.size;
+};
+
+Grid.prototype.serialize = function () {
+  var cellState = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cellState[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
+    }
+  }
+
   return {
-    position: {
-      x: this.x,
-      y: this.y
-    },
-    value: this.value
+    size: this.size,
+    cells: cellState
   };
 };
 
@@ -397,12 +487,12 @@ Tile.prototype.serialize = function () {
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/07/29/2048_data/main/" data-toggle="tooltip" data-placement="top" title="2048_data/main">&larr; Previous Post</a>
+            <a href="/2020/07/29/2048/game_manager/" data-toggle="tooltip" data-placement="top" title="2048/game_manager">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/2020/07/29/字符串学习笔记/" data-toggle="tooltip" data-placement="top" title="字符串学习笔记">Next Post &rarr;</a>
+            <a href="/2020/07/29/2048/html_actuator/" data-toggle="tooltip" data-placement="top" title="2048/html_actuator">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -445,7 +535,7 @@ Tile.prototype.serialize = function () {
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048_data/tile&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048_data/tile/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048/grid&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048/grid/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>

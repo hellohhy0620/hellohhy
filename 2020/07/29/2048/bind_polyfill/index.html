@@ -110,10 +110,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048_data/application/">
+  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048/bind_polyfill/">
   <title>
     
-    2048_data/application - hellohhy
+    2048/bind_polyfill - hellohhy
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -286,7 +286,7 @@
             <div class="tags">
               
             </div>
-            <h1>2048_data/application</h1>
+            <h1>2048/bind_polyfill</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by hellohhy on
@@ -302,7 +302,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">21</span> In Total
+              Words <span class="post-count">24</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -363,10 +363,15 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        // Wait till the browser is ready to render the game (avoids glitches)
-window.requestAnimationFrame(function () {
-  new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
-});
+        Function.prototype.bind = Function.prototype.bind || function (target) {
+  var self = this;
+  return function (args) {
+    if (!(args instanceof Array)) {
+      args = [args];
+    }
+    self.apply(target, args);
+  };
+};
 
 
         <hr>
@@ -374,12 +379,12 @@ window.requestAnimationFrame(function () {
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/07/29/2048_data/animframe_polyfill/" data-toggle="tooltip" data-placement="top" title="2048_data/animframe_polyfill">&larr; Previous Post</a>
+            <a href="/2020/07/29/2048/application/" data-toggle="tooltip" data-placement="top" title="2048/application">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/2020/07/29/2048_data/bind_polyfill/" data-toggle="tooltip" data-placement="top" title="2048_data/bind_polyfill">Next Post &rarr;</a>
+            <a href="/2020/07/29/2048/classlist_polyfill/" data-toggle="tooltip" data-placement="top" title="2048/classlist_polyfill">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -422,7 +427,7 @@ window.requestAnimationFrame(function () {
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048_data/application&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048_data/application/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048/bind_polyfill&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048/bind_polyfill/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>

@@ -110,10 +110,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048_data/html_actuator/">
+  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048/tile/">
   <title>
     
-    2048_data/html_actuator - hellohhy
+    2048/tile - hellohhy
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -286,7 +286,7 @@
             <div class="tags">
               
             </div>
-            <h1>2048_data/html_actuator</h1>
+            <h1>2048/tile</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by hellohhy on
@@ -298,11 +298,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">427</span> In Total
+              Words <span class="post-count">67</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -363,144 +363,32 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        function HTMLActuator() {
-  this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = document.querySelector(".best-container");
-  this.messageContainer = document.querySelector(".game-message");
+        function Tile(position, value) {
+  this.x                = position.x;
+  this.y                = position.y;
+  this.value            = value || 2;
 
-  this.score = 0;
+  this.previousPosition = null;
+  this.mergedFrom       = null; // Tracks tiles that merged together
 }
 
-HTMLActuator.prototype.actuate = function (grid, metadata) {
-  var self = this;
-
-  window.requestAnimationFrame(function () {
-    self.clearContainer(self.tileContainer);
-
-    grid.cells.forEach(function (column) {
-      column.forEach(function (cell) {
-        if (cell) {
-          self.addTile(cell);
-        }
-      });
-    });
-
-    self.updateScore(metadata.score);
-    self.updateBestScore(metadata.bestScore);
-
-    if (metadata.terminated) {
-      if (metadata.over) {
-        self.message(false); // You lose
-      } else if (metadata.won) {
-        self.message(true); // You win!
-      }
-    }
-
-  });
+Tile.prototype.savePosition = function () {
+  this.previousPosition = { x: this.x, y: this.y };
 };
 
-// Continues the game (both restart and keep playing)
-HTMLActuator.prototype.continueGame = function () {
-  this.clearMessage();
+Tile.prototype.updatePosition = function (position) {
+  this.x = position.x;
+  this.y = position.y;
 };
 
-HTMLActuator.prototype.clearContainer = function (container) {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
-};
-
-HTMLActuator.prototype.addTile = function (tile) {
-  var self = this;
-
-  var wrapper   = document.createElement("div");
-  var inner     = document.createElement("div");
-  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
-  var positionClass = this.positionClass(position);
-
-  // We can't use classlist because it somehow glitches when replacing classes
-  var classes = ["tile", "tile-" + tile.value, positionClass];
-
-  if (tile.value > 2048) classes.push("tile-super");
-
-  this.applyClasses(wrapper, classes);
-
-  inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
-
-  if (tile.previousPosition) {
-    // Make sure that the tile gets rendered in the previous position first
-    window.requestAnimationFrame(function () {
-      classes[2] = self.positionClass({ x: tile.x, y: tile.y });
-      self.applyClasses(wrapper, classes); // Update the position
-    });
-  } else if (tile.mergedFrom) {
-    classes.push("tile-merged");
-    this.applyClasses(wrapper, classes);
-
-    // Render the tiles that merged
-    tile.mergedFrom.forEach(function (merged) {
-      self.addTile(merged);
-    });
-  } else {
-    classes.push("tile-new");
-    this.applyClasses(wrapper, classes);
-  }
-
-  // Add the inner part of the tile to the wrapper
-  wrapper.appendChild(inner);
-
-  // Put the tile on the board
-  this.tileContainer.appendChild(wrapper);
-};
-
-HTMLActuator.prototype.applyClasses = function (element, classes) {
-  element.setAttribute("class", classes.join(" "));
-};
-
-HTMLActuator.prototype.normalizePosition = function (position) {
-  return { x: position.x + 1, y: position.y + 1 };
-};
-
-HTMLActuator.prototype.positionClass = function (position) {
-  position = this.normalizePosition(position);
-  return "tile-position-" + position.x + "-" + position.y;
-};
-
-HTMLActuator.prototype.updateScore = function (score) {
-  this.clearContainer(this.scoreContainer);
-
-  var difference = score - this.score;
-  this.score = score;
-
-  this.scoreContainer.textContent = this.score;
-
-  if (difference > 0) {
-    var addition = document.createElement("div");
-    addition.classList.add("score-addition");
-    addition.textContent = "+" + difference;
-
-    this.scoreContainer.appendChild(addition);
-  }
-};
-
-HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore;
-};
-
-HTMLActuator.prototype.message = function (won) {
-  var type    = won ? "game-won" : "game-over";
-  var message = won ? "You win!" : "Game over!";
-
-  this.messageContainer.classList.add(type);
-  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
-};
-
-HTMLActuator.prototype.clearMessage = function () {
-  // IE only takes one value to remove at a time.
-  this.messageContainer.classList.remove("game-won");
-  this.messageContainer.classList.remove("game-over");
+Tile.prototype.serialize = function () {
+  return {
+    position: {
+      x: this.x,
+      y: this.y
+    },
+    value: this.value
+  };
 };
 
 
@@ -509,12 +397,12 @@ HTMLActuator.prototype.clearMessage = function () {
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/07/29/2048_data/grid/" data-toggle="tooltip" data-placement="top" title="2048_data/grid">&larr; Previous Post</a>
+            <a href="/2020/07/29/2048/main/" data-toggle="tooltip" data-placement="top" title="2048/main">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/2020/07/29/2048_data/keyboard_input_manager/" data-toggle="tooltip" data-placement="top" title="2048_data/keyboard_input_manager">Next Post &rarr;</a>
+            <a href="/2020/07/29/字符串学习笔记/" data-toggle="tooltip" data-placement="top" title="字符串学习笔记">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -557,7 +445,7 @@ HTMLActuator.prototype.clearMessage = function () {
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048_data/html_actuator&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048_data/html_actuator/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048/tile&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048/tile/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>

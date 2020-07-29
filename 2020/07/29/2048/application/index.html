@@ -110,10 +110,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048_data/classlist_polyfill/">
+  <link rel="canonical" href="https://hellohhy.gitee.io/2020/07/29/2048/application/">
   <title>
     
-    2048_data/classlist_polyfill - hellohhy
+    2048/application - hellohhy
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -286,7 +286,7 @@
             <div class="tags">
               
             </div>
-            <h1>2048_data/classlist_polyfill</h1>
+            <h1>2048/application</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by hellohhy on
@@ -302,7 +302,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">191</span> In Total
+              Words <span class="post-count">21</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -363,77 +363,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        (function () {
-  if (typeof window.Element === "undefined" ||
-      "classList" in document.documentElement) {
-    return;
-  }
-
-  var prototype = Array.prototype,
-      push = prototype.push,
-      splice = prototype.splice,
-      join = prototype.join;
-
-  function DOMTokenList(el) {
-    this.el = el;
-    // The className needs to be trimmed and split on whitespace
-    // to retrieve a list of classes.
-    var classes = el.className.replace(/^\s+|\s+$/g, '').split(/\s+/);
-    for (var i = 0; i < classes.length; i++) {
-      push.call(this, classes[i]);
-    }
-  }
-
-  DOMTokenList.prototype = {
-    add: function (token) {
-      if (this.contains(token)) return;
-      push.call(this, token);
-      this.el.className = this.toString();
-    },
-    contains: function (token) {
-      return this.el.className.indexOf(token) != -1;
-    },
-    item: function (index) {
-      return this[index] || null;
-    },
-    remove: function (token) {
-      if (!this.contains(token)) return;
-      for (var i = 0; i < this.length; i++) {
-        if (this[i] == token) break;
-      }
-      splice.call(this, i, 1);
-      this.el.className = this.toString();
-    },
-    toString: function () {
-      return join.call(this, ' ');
-    },
-    toggle: function (token) {
-      if (!this.contains(token)) {
-        this.add(token);
-      } else {
-        this.remove(token);
-      }
-
-      return this.contains(token);
-    }
-  };
-
-  window.DOMTokenList = DOMTokenList;
-
-  function defineElementGetter(obj, prop, getter) {
-    if (Object.defineProperty) {
-      Object.defineProperty(obj, prop, {
-        get: getter
-      });
-    } else {
-      obj.__defineGetter__(prop, getter);
-    }
-  }
-
-  defineElementGetter(HTMLElement.prototype, 'classList', function () {
-    return new DOMTokenList(this);
-  });
-})();
+        // Wait till the browser is ready to render the game (avoids glitches)
+window.requestAnimationFrame(function () {
+  new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+});
 
 
         <hr>
@@ -441,12 +374,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2020/07/29/2048_data/bind_polyfill/" data-toggle="tooltip" data-placement="top" title="2048_data/bind_polyfill">&larr; Previous Post</a>
+            <a href="/2020/07/29/2048/animframe_polyfill/" data-toggle="tooltip" data-placement="top" title="2048/animframe_polyfill">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/2020/07/29/2048_data/game_manager/" data-toggle="tooltip" data-placement="top" title="2048_data/game_manager">Next Post &rarr;</a>
+            <a href="/2020/07/29/2048/bind_polyfill/" data-toggle="tooltip" data-placement="top" title="2048/bind_polyfill">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -489,7 +422,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048_data/classlist_polyfill&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048_data/classlist_polyfill/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=2048/application&body=Hi,I found this website and thought you might like it https://hellohhy.gitee.io/2020/07/29/2048/application/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
