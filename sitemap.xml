@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hellohhy.gitee.io/about/index.html</loc>
+    <loc>https://hellohhy.gitee.io/404.html</loc>
     
-    <lastmod>2020-07-30T23:49:47.443Z</lastmod>
+    <lastmod>2020-07-30T23:51:49.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/tags/index.html</loc>
+    
+    <lastmod>2020-07-30T23:51:48.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/game/index.html</loc>
+    
+    <lastmod>2020-07-30T23:51:48.348Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hellohhy.gitee.io/archive/index.html</loc>
     
-    <lastmod>2020-07-30T23:49:37.891Z</lastmod>
+    <lastmod>2020-07-30T23:51:47.660Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/about/index.html</loc>
+    
+    <lastmod>2020-07-30T23:51:47.064Z</lastmod>
     
   </url>
   
@@ -54,27 +75,6 @@
     <loc>https://hellohhy.gitee.io/2020/07/27/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-07-30T23:45:35.587Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/tags/index.html</loc>
-    
-    <lastmod>2020-07-30T23:44:47.665Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/404.html</loc>
-    
-    <lastmod>2020-07-30T23:27:32.625Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/game/index.html</loc>
-    
-    <lastmod>2020-07-29T13:09:51.245Z</lastmod>
     
   </url>
   
