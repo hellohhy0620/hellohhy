@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hellohhy.gitee.io/404.html</loc>
+    <loc>https://hellohhy.gitee.io/about/index.html</loc>
     
-    <lastmod>2020-07-30T23:51:49.508Z</lastmod>
+    <lastmod>2020-07-30T23:53:25.491Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/archive/index.html</loc>
+    
+    <lastmod>2020-07-30T23:53:16.423Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hellohhy.gitee.io/tags/index.html</loc>
     
-    <lastmod>2020-07-30T23:51:48.860Z</lastmod>
+    <lastmod>2020-07-30T23:53:03.258Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/404.html</loc>
+    
+    <lastmod>2020-07-30T23:52:47.922Z</lastmod>
     
   </url>
   
@@ -19,20 +33,6 @@
     <loc>https://hellohhy.gitee.io/game/index.html</loc>
     
     <lastmod>2020-07-30T23:51:48.348Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/archive/index.html</loc>
-    
-    <lastmod>2020-07-30T23:51:47.660Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/about/index.html</loc>
-    
-    <lastmod>2020-07-30T23:51:47.064Z</lastmod>
     
   </url>
   
