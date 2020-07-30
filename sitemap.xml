@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hellohhy.gitee.io/about/index.html</loc>
+    
+    <lastmod>2020-07-30T23:49:47.443Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/archive/index.html</loc>
+    
+    <lastmod>2020-07-30T23:49:37.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/friend/index.html</loc>
+    
+    <lastmod>2020-07-30T23:49:33.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hellohhy.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2020-07-30T23:49:31.371Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hellohhy.gitee.io/2020/07/28/%E6%95%B0%E8%AE%BA%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2020-07-30T23:45:49.487Z</lastmod>
@@ -33,34 +61,6 @@
     <loc>https://hellohhy.gitee.io/tags/index.html</loc>
     
     <lastmod>2020-07-30T23:44:47.665Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/archive/index.html</loc>
-    
-    <lastmod>2020-07-30T23:44:22.084Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/about/index.html</loc>
-    
-    <lastmod>2020-07-30T23:41:38.375Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/categories/index.html</loc>
-    
-    <lastmod>2020-07-30T23:41:12.970Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hellohhy.gitee.io/friend/index.html</loc>
-    
-    <lastmod>2020-07-30T23:40:55.249Z</lastmod>
     
   </url>
   
